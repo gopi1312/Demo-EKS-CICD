@@ -26,6 +26,7 @@ pipeline {
       steps{
         script{
           docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
+          sh'docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1:latest'
           sh'kubectl apply -f demongnix.yaml'  
           }
         }
