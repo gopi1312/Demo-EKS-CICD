@@ -6,13 +6,6 @@ pipeline {
   }
   agent any
   stages {
-    stage('scmcheckout'){
-      steps{
-        script{
-            git credentialsId: '0acbfc46-6dad-4498-80bb-2d42c7ad84ec', url: 'https://github.com/gopi1312/Demo-EKS-CICD.git'
-        }  
-      }    
-    }
     stage('Building image') {
       steps{
         script {
