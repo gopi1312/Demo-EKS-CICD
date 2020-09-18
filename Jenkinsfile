@@ -13,7 +13,7 @@ pipeline {
         }
       }
     }
-    stage('push image') {
+    stage('Push image') {
         steps{
             script{
                 docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
@@ -22,5 +22,11 @@ pipeline {
             }
         }
     }
+    stage('Deploy App'){
+      steps{
+        scripts{
+          sh'kubectl apply -f demongnix.yaml'  
+        }
+     }
   }
 }
