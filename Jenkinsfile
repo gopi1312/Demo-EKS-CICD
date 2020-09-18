@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Deploy App'){
       steps{
-        scripts{
+        script{
           sh'kubectl apply -f demongnix.yaml'  
         }
      }
