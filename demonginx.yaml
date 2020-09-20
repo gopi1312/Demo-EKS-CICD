@@ -15,5 +15,4 @@ spec:
       containers:
       - name: demoeks
         image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/${BuildNumber}
-      imagepullSecrets:
-      - name: eks-user-pass 
+       
