@@ -32,12 +32,13 @@ pipeline {
             //enableConfigSubstitution: true)
             //docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
             withCredentials([kubeconfigFile(credentialsId: 'Kubeconfig', variable: 'KUBECONFIG')]) {
-            sh"""   
-            cp -r ${WORKSPACE}/* /tmp/poc1
-            cd /tmp/poc1
+            //mkdir /tmp/poc1
+            //cp -r ${WORKSPACE}/* /tmp/poc1
+            //cd /tmp/poc1
+            sh"""
             pwd
             ls -ltr
-            kubectl apply -f ./demongnix.yaml
+            kubectl apply -f ${WORKSPACE}/demongnix.yaml
             """
             }           
           }
