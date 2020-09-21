@@ -28,7 +28,7 @@ pipeline {
           docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
           sh"""
           docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
-          kubectl apply -f /var/lib/jenkins/workspace/eks1@2/demongnix.yaml
+          kubectl apply -f demongnix.yaml
           """
           }
         }
