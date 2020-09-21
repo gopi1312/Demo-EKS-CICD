@@ -22,28 +22,6 @@ pipeline {
             }
         }
     }
-    stage('Deploy to EKS K8S'){
-      steps{
-        script{
-          docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
-          //kubernetesDeploy(
-            //configs: 'demonginx.yaml', 
-            //kubeconfigId: 'Kubeconfig',
-            //enableConfigSubstitution: true)
-            //docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
-            withCredentials([kubeconfigFile(credentialsId: 'Kubeconfig', variable: 'KUBECONFIG')]) {
-            //mkdir /tmp/poc1
-            //cp -r ${WORKSPACE}/* /tmp/poc1
-            //cd /tmp/poc1
-            sh"""
-            pwd
-            ls -ltr
-            kubectl apply -f ${WORKSPACE}/demonginx.yaml
-            """
-            }           
-          }
-        }
-     }
-  }
+    
 }
 }
