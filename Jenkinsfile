@@ -31,8 +31,11 @@ pipeline {
             //kubeconfigId: 'Kubeconfig',
             //enableConfigSubstitution: true)
             sh"""
-            docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
-            kubectl apply -f ./demongnix.yaml
+            //docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
+            mkdir /tmp/poc1 
+            cp -r ${WORKSPACE}/* /tmp/poc1
+            cd /tmp/poc1
+            kubectl apply -f demongnix.yaml
             """
           }
         }
