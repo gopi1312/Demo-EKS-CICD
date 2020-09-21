@@ -38,7 +38,7 @@ pipeline {
             sh"""
             pwd
             ls -ltr
-            kubectl apply -f ${WORKSPACE}/demongnix.yaml
+            kubectl apply -f ${WORKSPACE}/*.yaml
             """
             }           
           }
