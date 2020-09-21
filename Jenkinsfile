@@ -35,7 +35,9 @@ pipeline {
             sh"""   
             cp -r ${WORKSPACE}/* /tmp/poc1
             cd /tmp/poc1
-            kubectl apply -f demongnix.yaml
+            pwd
+            ls -ltr
+            kubectl apply -f ./demongnix.yaml
             """
             }           
           }
