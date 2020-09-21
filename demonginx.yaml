@@ -16,4 +16,4 @@ template:
  spec:
   containers:
   - name: demoeks
-    image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/$BuildNumber}
+    image: 181300079289.dkr.ecr.us-east-1.amazonaws.com:latest
