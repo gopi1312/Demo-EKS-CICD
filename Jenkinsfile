@@ -22,11 +22,15 @@ pipeline {
             }
         }
     }
-    stage('Deploy App'){
+    stage('Deploy to EKS K8S'){
       steps{
         script{
           docker.withRegistry("https://" + registry, "ecr:us-east-1:" + registryCredential) {
-          sh"""
+          kubernetesDeploy(
+            configs: 'demonginx.yaml', 
+            kubeconfigId: 'Kubeconfig',
+            enableConfigSubstitution: true)
+            sh"""
           docker pull 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1":$BUILD_NUMBER"
           kubectl apply -f demongnix.yaml
           """
