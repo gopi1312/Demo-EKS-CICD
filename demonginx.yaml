@@ -1,19 +1,19 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-name: demoeks
-labels:
-app: demoeks
+ name: demoeks
+ labels:
+  app: demoeks
 spec:
-replicas: 2
-selector:
-matchLabels:
-app: demoeks
+ replicas: 2
+ selector:
+  matchLabels:
+   app: demoeks
 template:
-metadata:
-labels:
-app: demoeks
-spec:
-containers:
-- name: demoeks
-image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/$BuildNumber}
+ metadata:
+  labels:
+   app: demoeks
+ spec:
+  containers:
+  - name: demoeks
+    image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/$BuildNumber}
