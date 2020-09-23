@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: "app-albdemo"
-        image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1:latest
+        image: 181300079289.dkr.ecr.us-east-1.amazonaws.com/demopoc1:alb
         imagePullPolicy: Always
         ports:
         - containerPort: 80
