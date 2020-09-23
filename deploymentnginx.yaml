@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "deployment-nginx-albdemo"
+  namespace: "alb-demo"
+spec:
+  selector:
+    matchLabels:
+      app: "nginx-albdemo"
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "nginx-albdemo"
+    spec:
+      containers:
+      - name: "nginx-albdemo"
+        image: nginx
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
