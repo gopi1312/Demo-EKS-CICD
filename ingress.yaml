@@ -19,4 +19,4 @@ spec:
           - path: /nginx
             backend:
               serviceName: "service-nginx-albdemo"
-              servicePort: 80
+              servicePort: 81
