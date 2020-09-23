@@ -5,8 +5,8 @@ metadata:
   namespace: "alb-demo"
 spec:
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 81
+      targetPort: 81
       protocol: TCP
   type: NodePort
   selector:
