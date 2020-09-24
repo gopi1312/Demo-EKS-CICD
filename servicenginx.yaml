@@ -3,6 +3,10 @@ kind: Service
 metadata:
   name: "service-nginx-albdemo"
   namespace: "alb-demo"
+  label:
+    app: nginx-albdemo
+  annotations:
+    alb.ingress.kubernetes.io/healthcheck-path: /usr/share/nginx/html/index.html
 spec:
   ports:
     - port: 81
