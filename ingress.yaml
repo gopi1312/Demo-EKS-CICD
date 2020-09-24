@@ -13,10 +13,16 @@ spec:
     - http:
         paths:
           - path: /app
+            pathType: Exact
             backend:
               serviceName: "service-albdemo"
               servicePort: 80
           - path: /nginx
+            pathType: Exact
             backend:
               serviceName: "service-nginx-albdemo"
               servicePort: 81
+          - path: /
+            backend:
+              serviceName: "service-albdemo"
+              servicePort: 80
