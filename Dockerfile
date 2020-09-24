@@ -1,6 +1,7 @@
 FROM nginx
 RUN apt-get update -y
 RUN apt-get install vim -y
-COPY index.html /usr/share/nginx/html/index.html
+RUN mkdir /app2
+COPY index.html /app2/
 CMD ["nginx", "-g", "daemon off;"]
 EXPOSE 80
