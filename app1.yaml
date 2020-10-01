@@ -26,10 +26,8 @@ metadata:
   name: app1-nginx-nodeport-service
   labels:
     app: app1-nginx
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /app1/index.html
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: app1-nginx
   ports:
